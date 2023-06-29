@@ -38,7 +38,7 @@ export default {
                 code: this.query
             };
 
-            axios(this.url, { params }).then(response => {
+            axios.post(this.url, { params }).then(response => {
                 this.items = response.data;
             });
         },

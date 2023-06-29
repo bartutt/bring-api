@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('page');
 });
 
-Route::get('/api/geodata', [ApiGeodataController::class, 'index']);
+Route::post('/api/geodata', [ApiGeodataController::class, 'index']);

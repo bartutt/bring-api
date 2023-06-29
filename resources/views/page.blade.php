@@ -3,6 +3,7 @@
         <div class="container">
             <h1 class="mt-10 mb-5">Finn postnr</h1>
             <form class="homepage__form">
+                @csrf
                 <autocomplete class-input="autocomplete-input input-text input-text--search"
                     placeholder="Søk" url="api/geodata">
 
