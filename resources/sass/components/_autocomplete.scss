@@ -22,8 +22,12 @@
 
     &__list-item{
         padding: 1rem;
-        border-bottom: 1px solid gray;
+        
 
+        &:nth-of-type(){
+            border-bottom: 1px solid gray;
+        }
+        
         &:first-of-type{
             padding-top: calc(30px + 1rem);
         }
