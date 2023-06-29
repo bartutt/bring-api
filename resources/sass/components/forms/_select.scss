@@ -1,0 +1,30 @@
+.select-wrapper {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+
+        border-top: 7px solid $color-accent;
+    }
+}
+select {
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    // Additional resets for further consistency
+    background-color: white;
+    border: 1px solid $color-border;
+    border-radius: 12px;
+    padding: 1rem 3rem 1rem 1rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+}

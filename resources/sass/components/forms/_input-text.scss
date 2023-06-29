@@ -1,0 +1,18 @@
+.input-text{  
+    
+    &--darker{
+        background-color: $color-bg-secondary;
+        border: 1px solid $color-bg-secondary;
+    }
+
+    &--search{
+        color: #000;
+        background-image: $icon-search-light;
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        &::placeholder{
+            color: $color-text-ligher;
+        }
+    
+    }
+}

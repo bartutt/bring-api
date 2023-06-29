@@ -1,0 +1,25 @@
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+input[type="search"],
+input[type="text"] {
+    border-radius: 10px;
+    border: 1px solid $color-border;
+    width: 100%;
+    padding: 1rem;
+
+    &:focus,
+    &:focus-visible {
+        outline: none;
+        @extend .hover-shadow;
+    }
+}
+
+input{
+    //override bootstrap  font size
+    font-size: 0.875rem!important;
+}

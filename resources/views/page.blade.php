@@ -1,7 +1,7 @@
 <x-app-layout>
     @section('content')
         <div class="container">
-            <h1>Søk</h1>
+            <h1 class="mt-10 mb-5">Finn postnr</h1>
             <form class="homepage__form">
                 <autocomplete class-input="autocomplete-input input-text input-text--darker input-text--search"
                     placeholder="Søk" url="api/geodata">
