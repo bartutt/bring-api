@@ -15,7 +15,7 @@
 export default {
 
 
-    props: ['url', 'classInput', 'placeholder'],
+    props: ['url', 'classInput', 'placeholder',],
 
     data() {
         return {
@@ -35,7 +35,7 @@ export default {
         },
         fetch() {
             const params = {
-                q: this.query
+                code: this.query
             };
 
             axios(this.url, { params }).then(response => {
@@ -45,12 +45,15 @@ export default {
     },
     computed: {
         showResults() {
-            return this.query.length > 2 && this.focus;
+            return this.query.length > 3 && this.focus;
         },
     },
     watch: {
         query() {
-            this.fetch();
+            if(this.query.length > 3){
+                this.fetch();
+            }
+            
         }
     }
 }
