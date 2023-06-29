@@ -1,0 +1,26 @@
+<x-app-layout>
+    @section('content')
+        <div class="container">
+            <h1>Søk</h1>
+            <form class="homepage__form">
+                <autocomplete class-input="autocomplete-input input-text input-text--darker input-text--search"
+                    placeholder="Søk" url="api/geodata">
+
+                    <template #results="resultsProps">
+                        <div class="autocomplete-results">
+                            <ul class="autocomplete-results__list">
+                                <li class="autocomplete-results__list-item" v-for="item in resultsProps.items">
+                                    <a :href="item.url">@{{ item.text }} (@{{ item.quantity }})</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </template>
+
+                </autocomplete>
+
+                <button aria-label="søk" type="submit"></button>
+            </form>
+        </div>
+    @endsection
+
+</x-app-layout>

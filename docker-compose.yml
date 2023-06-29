@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  nginx:
+    image: "php8.0"
+    container_name: bring-api
+    volumes:
+      - .:/app
+      - ./dev/nginx:/etc/nginx/conf.d
+      - ${SSH_AUTH_SOCK}:/ssh-agent
+    environment:
+      - PHP_OPCACHE_ENABLE=0
+      - PHP_POST_MAX_SIZE=60M
+      - PHP_MAX_INPUT_VARS=50000
+      - VIRTUAL_HOST=bring-api.test
+      - VIRTUAL_PORT=8080
+      - SSH_AUTH_SOCK=/ssh-agent
+    ports:
+      - "8080:8080"
+      - "5173:5173"
+    networks:
+      - dev
+networks:
+  dev:
+    external: true  
