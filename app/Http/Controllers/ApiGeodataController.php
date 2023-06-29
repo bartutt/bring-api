@@ -17,7 +17,7 @@ class ApiGeodataController extends Controller
     public function index(Request $request)
     {
         $geodataService = new BringApiService();
-        $code = $request->query('code');
+        $code = $request->post()['params']['code'];
         $parsed = Parser::fromPostalCode($geodataService->get('postal-codes/' . $code));
         return $parsed;
     }
