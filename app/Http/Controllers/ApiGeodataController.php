@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\BringApiService;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -14,7 +15,8 @@ class ApiGeodataController extends Controller
      */
     public function index(Request $request)
     {
-        return [];
+        $geodataService = new BringApiService();
+        return $geodataService->get('postal-codes');
     }
 
 }
