@@ -1,6 +1,7 @@
 <template>
     <div>
-        <input @focus="focus = true" :class="classInput" :placeholder="placeholder" type="text" v-model="query">
+        <label class="mb-1" for="id">{{ label }}</label>
+        <input id="id" @focus="focus = true" :class="classInput" :placeholder="placeholder" type="text" v-model="query">
         <div v-if="showResults">
             <slot :items="items" name="results">
                 TODO, fallback
@@ -15,7 +16,7 @@
 export default {
 
 
-    props: ['url', 'classInput', 'placeholder',],
+    props: ['url', 'classInput', 'placeholder', 'id', 'label'],
 
     data() {
         return {

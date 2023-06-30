@@ -15,7 +15,7 @@ function initPage() {
 
         data() {
             return {
-                
+
             };
         },
 
