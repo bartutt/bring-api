@@ -13,10 +13,12 @@ class Parser
     public static function fromPostalCode($items)
     {
         $parsed = [];
+
         foreach ($items->postal_codes as $key => $value) {
             $parsed[] = [
-                'city' => $value->city,
-                'url' => $value->city
+                'name' => $value->city,
+                "code" => $value->postal_code,
+                "county" => $value->county,
             ];
         }
 
